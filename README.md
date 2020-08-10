@@ -1,0 +1,1 @@
+# psalm-laravel-collections
