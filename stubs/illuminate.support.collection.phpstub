@@ -1,0 +1,479 @@
+<?php
+// phpcs:ignoreFile
+namespace Illuminate\Support;
+
+use ArrayAccess;
+
+/**
+ * @template TKey as array-key
+ * @template TValue
+ * @template-implements ArrayAccess<TKey,TValue>
+ */
+class Collection implements ArrayAccess, Enumerable
+{
+    /**
+     * @var array<TKey,TValue>
+     */
+    public $items;
+
+    /**
+     * @template TCallbackReturn
+     * @param int $number
+     * @param ?Closure(mixed):TCallbackReturn $callback
+     * @return Collection<int,TCallbackReturn>
+     */
+    public static function times($number, $callback = null)
+    {
+    }
+
+    /**
+     * @return array<TKey,TValue>
+     */
+    public function all()
+    {
+    }
+
+    /**
+     * @param Closure(TValue):mixed|null|string $callback
+     * @return float|int|null
+     */
+    public function avg($callback = null)
+    {
+    }
+
+    /**
+     * @param TKey|null $key
+     * @return float|int|null
+     */
+    public function median($key = null)
+    {
+    }
+
+    /**
+     * @param TValue|null $key
+     *
+     * @return list<TKey>|null
+     */
+    public function mode($key = null)
+    {
+    }
+
+    /**
+     * @param TValue $key
+     * @param mixed|null $operator
+     * @param mixed|null $value
+     *
+     * @return bool
+     */
+    public function contains($key, $operator = null, $value = null)
+    {
+    }
+
+    /**
+     * @param Collection<TKey>|list<TKey> $keys
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function except($keys)
+    {
+    }
+
+    /**
+     * @param ?Closure(TValue,?TKey):bool $callback
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function filter(callable $callback = null)
+    {
+    }
+
+    /**
+     * @param Closure(TValue,?TKey):bool $callback
+     * @param TValue $default
+     *
+     * @return TValue
+     */
+    public function first(callable $callback = null, $default = null)
+    {
+    }
+
+    /**
+     * @return Collection<TValue,TKey>
+     */
+    public function flip()
+    {
+    }
+
+    /**
+     * @param list<TKey>|string $keys
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function forget($keys)
+    {
+    }
+
+    /**
+     * @param TKey $key
+     * @param ?TValue $default
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function get($key, $default = null)
+    {
+    }
+
+    /**
+     * @param array<TKey>|TKey $key
+     *
+     * @return bool
+     */
+    public function has($key)
+    {
+    }
+
+    /**
+     * @return Collection<int,TKey>
+     */
+    public function keys()
+    {
+    }
+
+    /**
+     * @param Closure(TValue,?TKey):bool|null $callback
+     * @param TValue|null $default
+     *
+     * @return TValue
+     */
+    public function last(callable $callback = null, $default = null)
+    {
+    }
+
+    /**
+     * @template TCallbackReturnValue
+     * @param Closure(TValue,?TKey):TCallbackReturnValue $callback
+     *
+     * @return Collection<TKey,TCallbackReturnValue>
+     */
+    public function map(callable $callback)
+    {
+    }
+
+    /**
+     * @template TCallbackReturnKey
+     * @template TCallbackReturnValue
+     * @param Closure(TValue,?TKey):array<TCallbackReturnKey,TCallbackReturnValue> $callback
+     *
+     * @return Collection<TCallbackReturnKey,list<TCallbackReturnValue>>
+     */
+    public function mapToDictionary(callable $callback)
+    {
+    }
+
+    /**
+     * @template TCallbackReturnKey
+     * @template TCallbackReturnValue
+     * @param Closure(TValue,?TKey):array<TCallbackReturnKey,TCallbackReturnValue> $callback
+     *
+     * @return Collection<TCallbackReturnKey,TCallbackReturnValue>
+     */
+    public function mapWithKeys(callable $callback)
+    {
+    }
+
+    /**
+     * @param int $step
+     * @param int $offset
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function nth($step, $offset = 0)
+    {
+    }
+
+    /**
+     * @param TKey|Enumerable|null $keys
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function only($keys)
+    {
+    }
+
+    /**
+     * @return ?TValue
+     */
+    public function pop()
+    {
+    }
+
+    /**
+     * @param TValue $value
+     * @param ?TKey $key
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function prepend($value, $key = null)
+    {
+    }
+
+    /**
+     * @param TValue $value
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function push($value)
+    {
+    }
+
+    /**
+     * @param iterable<TKey,TValue> $source
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function concat($source)
+    {
+    }
+
+    /**
+     * @param TKey $key
+     * @param ?TValue $default
+     *
+     * @return TValue
+     */
+    public function pull($key, $default = null)
+    {
+    }
+
+    /**
+     * @param TKey $key
+     * @param TValue $value
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function put($key, $value)
+    {
+    }
+
+    /**
+     * @param ?int $number
+     *
+     * @return TValue|Collection<TKey,TValue>
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function random($number = null)
+    {
+    }
+
+    /**
+     * @template TCallbackInitial
+     * @param Closure(TCallbackInitial,TValue):TCallbackInitial $callback
+     * @param ?TCallbackInitial $initial
+     *
+     * @return mixed
+     */
+    public function reduce(callable $callback, $initial = null)
+    {
+    }
+
+    /**
+     * @return Collection<TKey,TValue>
+     */
+    public function reverse()
+    {
+    }
+
+    /**
+     * @param Closure(TValue,?TKey):bool|TValue $value
+     * @param bool $strict
+     *
+     * @return TKey|bool
+     */
+    public function search($value, $strict = false)
+    {
+    }
+
+    /**
+     * @return Collection<TKey,TValue>
+     */
+    public function shift()
+    {
+    }
+
+    /**
+     * @param ?int $seed
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function shuffle($seed = null)
+    {
+    }
+
+    /**
+     * @param int $count
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function skip($count)
+    {
+    }
+
+    /**
+     * @param int $offset
+     * @param ?int $length
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function slice($offset, $length = null)
+    {
+    }
+
+    /**
+     * @param int $numberOfGroups
+     *
+     * @return Collection<int,Collection<TKey,TValue>>
+     */
+    public function split($numberOfGroups)
+    {
+    }
+
+    /**
+     * @param int $size
+     *
+     * @return Collection<int,Collection<TKey,TValue>>
+     */
+    public function chunk($size)
+    {
+    }
+
+    /**
+     * @param ?Closure(TValue,TValue):int $callback
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function sort($callback = null)
+    {
+    }
+
+    /**
+     * @param Closure(TValue,?TKey):mixed|string $callback
+     * @param int $options
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function sortByDesc($callback, $options = SORT_REGULAR)
+    {
+    }
+
+    /**
+     * @param int $options
+     * @param bool $descending
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function sortKeys($options = SORT_REGULAR, $descending = false)
+    {
+    }
+
+    /**
+     * @param int $options
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function sortKeysDesc($options = SORT_REGULAR)
+    {
+    }
+
+    /**
+     * @param int $offset
+     * @param ?int|null $length
+     * @param TValue|list<TValue>|null $replacement
+     *
+     * @return static
+     */
+    public function splice($offset, $length = null, $replacement = array())
+    {
+    }
+
+    /**
+     * @param int $limit
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function take($limit)
+    {
+    }
+
+    /**
+     * @template TCallbackReturn
+     * @param Closure(TValue,?TKey):TCallbackReturn $callback
+     *
+     * @return Collection<mixed,TCallbackReturn>
+     */
+    public function transform($callback)
+    {
+    }
+
+    /**
+     * @return Collection<int,TValue>
+     */
+    public function values()
+    {
+    }
+
+    /**
+     * @param int $size
+     * @param TValue $value
+     *
+     * @return Collection<TKey,TValue>
+     */
+    public function pad($size, $value)
+    {
+    }
+
+    /**
+     * @param TValue $item
+     * @return Collection<TKey,TValue>
+     */
+    public function add($item)
+    {
+    }
+
+    /**
+     * @param TKey $key
+     *
+     * @return bool
+     */
+    public function offsetExists($key)
+    {
+    }
+
+    /**
+     * @param TKey $key
+     *
+     * @return TValue
+     */
+    public function offsetGet($key)
+    {
+    }
+
+    /**
+     * @param TKey $key
+     * @param TValue $value
+     *
+     * @return void
+     */
+    public function offsetSet($key, $value)
+    {
+    }
+
+    /**
+     * @param TKey $key
+     *
+     * @return void
+     */
+    public function offsetUnset($key)
+    {
+    }
+}
