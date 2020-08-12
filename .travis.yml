@@ -16,7 +16,6 @@ script: composer check
 
 env:
     matrix:
-        - DEPS=low
         - DEPS=high
         - DEPS=stable
 cache:
