@@ -1,0 +1,51 @@
+{
+    "name": "fkupper/psalm-laravel-collections",
+    "description": "Stubs to let Psalm understand Laravel Collections better",
+    "keywords": ["php", "code", "inspection", "doctrine", "orm", "doctrine2", "dbal", "psalm", "plugin", "psalm-plugin", "static analysis", "static-analysis", "extension"],
+    "type": "psalm-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Küpper Cardoso",
+            "email": "fernando@kupper.com.br"
+        }
+    ],
+    "require": {
+        "vimeo/psalm": "dev-master"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.3",
+        "laravel/framework": "^6.0",
+        "codeception/codeception": "^4.0",
+        "weirdan/codeception-psalm-module": "^0.8.0"
+    },
+    "extra": {
+        "psalm" : {
+            "pluginClass": "Fkupper\\Psalm\\LaravelCollection\\Plugin"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Fkupper\\Psalm\\LaravelCollection\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fkupper\\Psalm\\LaravelCollection\\Tests\\": [
+                "tests/_support",
+                "tests/acceptance"
+            ]
+        }
+    },
+    "scripts" : {
+        "check": [
+            "@cs-check",
+            "@test",
+            "@analyze"
+        ],
+        "analyze": "psalm",
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "codecept --colors run -v"
+    }
+}
