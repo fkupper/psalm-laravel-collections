@@ -19,10 +19,10 @@ class Collection implements ArrayAccess, Enumerable
     /**
      * @template TCallbackReturn
      * @param int $number
-     * @param ?Closure(mixed):TCallbackReturn $callback
+     * @param Closure(mixed):TCallbackReturn|null $callback
      * @return Collection<int,TCallbackReturn>
      */
-    public static function times($number, $callback = null)
+    public static function times($number, callable $callback = null)
     {
     }
 
