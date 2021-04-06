@@ -34,7 +34,7 @@ Feature: Collections
         When I run Psalm
         Then I see these errors
             | Type                  | Message                                                                          |
-            | InvalidScalarArgument | Argument 1 of Illuminate\Support\Collection::add expects bool, int(1) provided   |
+            | InvalidScalarArgument | Argument 1 of Illuminate\Support\Collection::add expects bool, 1 provided   |
         And I see no other errors
 
     @Collection::times
@@ -55,6 +55,7 @@ Feature: Collections
             """
             /** @var Collection<string,string> */
             $c = new Collection(['a' => 'A', 'b' => 'B', 'c' => 'C']);
+            /** @psalm-suppress UnusedMethodCall */
             $c->all()[1];
             """
         When I run Psalm
@@ -69,6 +70,7 @@ Feature: Collections
             """
             /** @var Collection<string,string> */
             $c = new Collection(['a' => 'A', 'b' => 'B', 'c' => 'C']);
+            /** @psalm-suppress UnusedMethodCall */
             $c->all()['a'];
             """
         When I run Psalm
@@ -85,7 +87,7 @@ Feature: Collections
         When I run Psalm
         Then I see these errors
             | Type                  | Message                                                                          |
-            | InvalidScalarArgument | Argument 1 of Illuminate\Support\Collection::add expects string, int(1) provided |
+            | InvalidScalarArgument | Argument 1 of Illuminate\Support\Collection::add expects string, 1 provided |
         And I see no other errors
 
     @Collection::add
