@@ -133,6 +133,17 @@ class Collection implements ArrayAccess, Enumerable
     }
 
     /**
+     * @template TCallbackReturn
+     *
+     * @param callable(TValue):TCallbackReturn $keyBy
+     *
+     * @return Collection<TCallbackReturn,TValue>
+     */
+    public function keyBy($keyBy)
+    {
+    }
+
+    /**
      * @return Collection<int,TKey>
      */
     public function keys()
@@ -402,6 +413,13 @@ class Collection implements ArrayAccess, Enumerable
      * @return Collection<TKey,TValue>
      */
     public function take($limit)
+    {
+    }
+
+    /**
+     * @return array<TKey,TValue>
+     */
+    public function toArray()
     {
     }
 
